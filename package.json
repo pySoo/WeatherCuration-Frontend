@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 4000",
+    "dev": "next dev -p 5000",
     "build": "next build",
     "start": "next start",
     "postinstall": "husky install",
@@ -16,9 +16,13 @@
     ]
   },
   "dependencies": {
+    "@apollo/client": "^3.8.6",
+    "graphql": "^16.8.1",
     "next": "13.5.6",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-loader-spinner": "^5.4.5",
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@types/node": "^20",
