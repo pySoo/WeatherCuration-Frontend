@@ -49,7 +49,8 @@ export default function CosmeRecommend() {
         {weatherKeywords.map(({ keyword }) => (
           <Pill
             key={keyword}
-            className="bg-[#03c75a] hover:bg-[#03c75a] cursor-auto font-semibold py-1"
+            className="cursor-default font-semibold py-1"
+            bgColor="#03c75a"
           >
             {keyword}
           </Pill>

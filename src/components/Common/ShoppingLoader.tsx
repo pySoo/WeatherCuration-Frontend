@@ -2,7 +2,7 @@ import { RotatingSquare } from 'react-loader-spinner';
 
 export default function ShoppingLoader() {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center">
+    <div className="w-full h-full flex flex-col items-center justify-center mx-auto">
       <RotatingSquare
         height="100"
         width="100"

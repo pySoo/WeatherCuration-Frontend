@@ -20,16 +20,18 @@ export default function ShoppingList({
 
   return (
     <div className="grid-item pt-4 pb-3 h-[314px] ">
-      <div className=" flex w-full overflow-scroll scrollbar-hide h-[284px]">
-        <div className="w-full flex items-center gap-3 snap-x snap-mandatory px-3.5">
+      <div className="flex w-full overflow-scroll scrollbar-hide h-[284px]">
+        <div className="w-full gap-3 snap-x snap-mandatory">
           {shoppingItem ? (
-            shoppingItem.map((item) => (
-              <ShoppingItem
-                key={item.title}
-                shoppingItem={item}
-                isPriority={isPriority}
-              />
-            ))
+            <div className="px-3.5 flex items-center h-full w-fit gap-3">
+              {shoppingItem.map((item) => (
+                <ShoppingItem
+                  key={item.title}
+                  shoppingItem={item}
+                  isPriority={isPriority}
+                />
+              ))}
+            </div>
           ) : (
             <ShoppingLoader />
           )}
