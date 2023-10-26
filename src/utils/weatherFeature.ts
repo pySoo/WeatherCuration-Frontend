@@ -22,8 +22,8 @@ export const getWeatherFeature = (weatherFeatures: WeatherFeatureType) => {
   if (weatherFeatures.minTemperature <= 10) {
     keywordList.push({
       keyword: '10도 이하로 쌀쌀해져요',
-      description: '면역력을 키워볼까요?',
-      query: '영양제',
+      description: '면역력을 키워볼까요? 💪',
+      query: '홍삼',
     });
   } else if (weatherFeatures.minTemperature <= 15) {
     keywordList.push({
