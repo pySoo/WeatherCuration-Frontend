@@ -17,12 +17,15 @@
   },
   "dependencies": {
     "@apollo/client": "^3.8.6",
+    "add": "^2.0.6",
     "graphql": "^16.8.1",
     "next": "13.5.6",
     "react": "^18",
     "react-dom": "^18",
     "react-loader-spinner": "^5.4.5",
-    "recoil": "^0.7.7"
+    "recoil": "^0.7.7",
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@types/node": "^20",
