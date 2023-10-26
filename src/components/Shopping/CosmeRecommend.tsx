@@ -12,9 +12,9 @@ import {
 import Description from '../Common/Description';
 import Pill from '../Common/Pill';
 import SubTitle from '../Common/SubTitle';
-import ShoppingList from '../Shopping/ShoppingList';
+import ShoppingList from './ShoppingList';
 
-export default function WeatherPredictFeature() {
+export default function CosmeRecommend() {
   const [cosmeList, setCosmeList] = useState<ShoppingListType[]>([]);
 
   const weatherState = useRecoilValue(weatherAtom);
@@ -49,16 +49,16 @@ export default function WeatherPredictFeature() {
         {weatherKeywords.map(({ keyword }) => (
           <Pill
             key={keyword}
-            className="bg-[#4377fd] hover:bg-[#4377fd] cursor-auto font-semibold"
+            className="bg-[#03c75a] hover:bg-[#03c75a] cursor-auto font-semibold py-1"
           >
             {keyword}
           </Pill>
         ))}
       </div>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-[40px]">
         {weatherKeywords.map(({ description, query }) => (
           <div key={description}>
-            <Description className="my-3 sm:text-xl text-white">
+            <Description className="my-3 text-white text-[21px]">
               {description}
             </Description>
             <ShoppingList selectedKeyword={query} shoppingList={cosmeList} />
