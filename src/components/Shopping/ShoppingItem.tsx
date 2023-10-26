@@ -31,6 +31,8 @@ export default function ShoppingItem({
           width={200}
           height={200}
           className="mb-2 w-full h-[200px] rounded-xl object-cover shadow-sm"
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
         />
         <span className="font-bold text-base">{`${convertTextByPriceFormat(
           lprice,
