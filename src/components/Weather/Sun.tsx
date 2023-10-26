@@ -7,7 +7,7 @@ interface SunProps {
 
 export default function Sun({ UVindex }: SunProps) {
   return (
-    <div className="absolute w-full h-full overflow-hidden top-0 opacity-50 mt-20 pointer-events-none">
+    <div className="absolute w-full h-full overflow-hidden top-0 opacity-50  pointer-events-none">
       <Image
         src="/asset/sunlight.png"
         alt="sunlight"
