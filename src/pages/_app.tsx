@@ -13,6 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Weather Curation 🧚‍♀️</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="favicon" type="image/x-icon" href="/public/favicon.ico" />
       </Head>
       <ApolloProvider client={apolloClient}>
         <RecoilRoot>
