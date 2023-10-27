@@ -38,7 +38,7 @@ type MetricValue = {
   Phase?: string;
 };
 
-type Temperature = {
+export type Temperature = {
   Maximum: MetricValue;
   Minimum: MetricValue;
 };
