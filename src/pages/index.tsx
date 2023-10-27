@@ -16,9 +16,8 @@ import {
   FivedaysForecastData,
   LocationKey,
 } from '@/graphql/types/queryDataTypes';
-import { WeatherFeatureType } from '@/types/weather';
 import { matchClothesByTemperature } from '@/utils/matchClothes';
-import { getWeatherFeature } from '@/utils/weatherFeature';
+import { getKeywordsByForecast } from '@/utils/weatherFeature';
 
 export default function Main() {
   const { locationKey } = DEFAULT_LOCATION;
@@ -59,40 +58,10 @@ export default function Main() {
       ];
 
       // 5일간의 예보 중 특이점들을 모아서 저장
-      const weatherFeatures: WeatherFeatureType = {
-        bigTempDiff: false,
-        possibleToRain: false,
-        minTemperature: 40,
-      };
-
-      forecasts.forEach((forecast) => {
-        if (
-          Math.abs(
-            forecast.Temperature.Maximum.Value -
-              forecast.Temperature.Minimum.Value,
-          ) >= 10
-        ) {
-          weatherFeatures.bigTempDiff = true;
-        }
-
-        if (
-          forecast.Day.RainProbability >= 60 ||
-          forecast.Night.RainProbability >= 60
-        ) {
-          weatherFeatures.possibleToRain = true;
-        }
-
-        if (
-          weatherFeatures.minTemperature === null ||
-          forecast.Temperature.Minimum.Value < weatherFeatures.minTemperature
-        ) {
-          weatherFeatures.minTemperature = forecast.Temperature.Minimum.Value;
-        }
-      });
 
       setWeatherState({
         temperatureKeywords: updatedTemperature,
-        weatherKeywords: getWeatherFeature(weatherFeatures),
+        weatherKeywords: getKeywordsByForecast(forecasts),
       });
     },
   });

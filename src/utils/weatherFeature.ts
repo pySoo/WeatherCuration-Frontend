@@ -1,6 +1,7 @@
+import { DailyForecasts } from '@/graphql/types/queryDataTypes';
 import { WeatherFeatureType, WeatherKeywordType } from '@/types/weather';
 
-export const getWeatherFeature = (weatherFeatures: WeatherFeatureType) => {
+export const matchKeywordsByFeature = (weatherFeatures: WeatherFeatureType) => {
   const keywordList: WeatherKeywordType[] = [];
 
   if (weatherFeatures.bigTempDiff) {
@@ -48,4 +49,38 @@ export const getWeatherFeature = (weatherFeatures: WeatherFeatureType) => {
   }
 
   return keywordList;
+};
+
+export const getKeywordsByForecast = (forecasts: DailyForecasts[]) => {
+  const weatherFeatures: WeatherFeatureType = {
+    bigTempDiff: false,
+    possibleToRain: false,
+    minTemperature: 40,
+  };
+
+  forecasts.forEach((forecast) => {
+    if (
+      Math.abs(
+        forecast.Temperature.Maximum.Value - forecast.Temperature.Minimum.Value,
+      ) >= 10
+    ) {
+      weatherFeatures.bigTempDiff = true;
+    }
+
+    if (
+      forecast.Day.RainProbability >= 60 ||
+      forecast.Night.RainProbability >= 60
+    ) {
+      weatherFeatures.possibleToRain = true;
+    }
+
+    if (
+      weatherFeatures.minTemperature === null ||
+      forecast.Temperature.Minimum.Value < weatherFeatures.minTemperature
+    ) {
+      weatherFeatures.minTemperature = forecast.Temperature.Minimum.Value;
+    }
+  });
+
+  return matchKeywordsByFeature(weatherFeatures);
 };
