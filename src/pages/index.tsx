@@ -16,7 +16,7 @@ import {
   FivedaysForecastData,
   LocationKey,
 } from '@/graphql/types/queryDataTypes';
-import { matchClothesByTemperature } from '@/utils/matchClothes';
+import { getKeywordsByTemperature } from '@/utils/temperatureFeature';
 import { getKeywordsByForecast } from '@/utils/weatherFeature';
 
 export default function Main() {
@@ -40,27 +40,9 @@ export default function Main() {
     onCompleted: (data) => {
       const forecasts = data.getFiveDaysForecast.DailyForecasts;
 
-      // 최저 최고 온도 구하기
-      const { Maximum, Minimum } = forecasts[0].Temperature;
-
-      const maxTemperature = Math.round(Maximum.Value);
-      const minTemperature = Math.round(Minimum.Value);
-
-      const updatedTemperature = [
-        {
-          value: minTemperature,
-          keywords: matchClothesByTemperature(minTemperature),
-        },
-        {
-          value: maxTemperature,
-          keywords: matchClothesByTemperature(maxTemperature),
-        },
-      ];
-
       // 5일간의 예보 중 특이점들을 모아서 저장
-
       setWeatherState({
-        temperatureKeywords: updatedTemperature,
+        temperatureKeywords: getKeywordsByTemperature(forecasts[0].Temperature),
         weatherKeywords: getKeywordsByForecast(forecasts),
       });
     },

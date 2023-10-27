@@ -1,3 +1,5 @@
+import { Temperature } from '@/graphql/types/queryDataTypes';
+
 export const matchClothesByTemperature = (temperature: number) => {
   if (temperature < 5) {
     return ['패딩', '코트', '목도리'];
@@ -16,4 +18,24 @@ export const matchClothesByTemperature = (temperature: number) => {
   } else {
     return ['민소매', '린넨'];
   }
+};
+
+export const getKeywordsByTemperature = (temperature: Temperature) => {
+  const { Maximum, Minimum } = temperature;
+
+  const maxTemperature = Math.round(Maximum.Value);
+  const minTemperature = Math.round(Minimum.Value);
+
+  const matchKeywordsByTemperature = [
+    {
+      value: minTemperature,
+      keywords: matchClothesByTemperature(minTemperature),
+    },
+    {
+      value: maxTemperature,
+      keywords: matchClothesByTemperature(maxTemperature),
+    },
+  ];
+
+  return matchKeywordsByTemperature;
 };
