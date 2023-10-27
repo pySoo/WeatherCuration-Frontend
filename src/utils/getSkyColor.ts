@@ -15,7 +15,11 @@ export const getCurrentSkyColor = (
   getCurrentCondition: GetCurrentCondition,
   getFiveDaysForecast: GetFiveDaysForecast,
 ) => {
-  const now = new Date().getTime();
+  const date = new Date();
+  const utc = date.getTime() + date.getTimezoneOffset() * 60 * 1000;
+  const koreaTimeDiff = 9 * 60 * 60 * 1000;
+  const now = new Date(utc + koreaTimeDiff).getTime();
+
   const isDayTime = getCurrentCondition.IsDayTime;
 
   const sunriseTime = new Date(
