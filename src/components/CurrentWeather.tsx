@@ -1,34 +1,24 @@
 import React from 'react';
+import { useRecoilValue } from 'recoil';
 
+import { weatherAtom } from '@/atom/weatherAtom';
 import { DEFAULT_LOCATION } from '@/constants/location';
-import {
-  CurrentConditionData,
-  FivedaysForecastData,
-} from '@/graphql/types/queryDataTypes';
+import { CurrentConditionData } from '@/graphql/types/queryDataTypes';
 
 interface CurrentWeatherProps {
   currentConditionData: CurrentConditionData;
-  fivedaysForecastData: FivedaysForecastData;
 }
 
 export default function CurrentWeather({
   currentConditionData,
-  fivedaysForecastData,
 }: CurrentWeatherProps) {
   const { cityName } = DEFAULT_LOCATION;
+
+  const weatherState = useRecoilValue(weatherAtom);
+
   const currentTemperature =
     currentConditionData.getCurrentCondition.Temperature.Metric.Value;
   const weatherText = currentConditionData.getCurrentCondition.WeatherText;
-
-  const maxTemperature = Math.round(
-    fivedaysForecastData.getFiveDaysForecast.DailyForecasts[0].Temperature
-      .Maximum.Value,
-  );
-  const minTemperature = Math.round(
-    fivedaysForecastData.getFiveDaysForecast.DailyForecasts[0].Temperature
-      .Minimum.Value,
-  );
-
   return (
     <div className="flex flex-col items-center space-y-1 mb-14">
       <h1 className="text-4xl shadowed-text">{cityName}</h1>
@@ -36,7 +26,9 @@ export default function CurrentWeather({
         {Math.round(currentTemperature)}°
       </h2>
       <h3 className="text-xl shadowed-text">{weatherText}</h3>
-      <span className="text-xl shadowed-text">{`최고${maxTemperature}° 최저${minTemperature}°`}</span>
+      {weatherState.weatherKeywords.length > 0 && (
+        <span className="text-xl shadowed-text">{`최고${weatherState.temperatureKeywords[1].value}° 최저${weatherState.temperatureKeywords[0].value}°`}</span>
+      )}
     </div>
   );
 }

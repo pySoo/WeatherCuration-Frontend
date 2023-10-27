@@ -84,10 +84,7 @@ export default function Main() {
         fivedaysForecastData={fivedaysForecastData}
       >
         {allQuriesCompleted ? (
-          <WeatherCuration
-            currentConditionData={currentConditionData}
-            fivedaysForecastData={fivedaysForecastData}
-          />
+          <WeatherCuration currentConditionData={currentConditionData} />
         ) : (
           <Loader />
         )}
