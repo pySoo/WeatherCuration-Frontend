@@ -34,26 +34,25 @@
 ## 화면 구성
 
 ### 1. 현재 시간, 자외선 지수, 구름량, 눈 또는 비의 여부에 따라서 배경이 변화합니다.
-
-<img width="1440" alt="curation1" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/201f41b7-1cba-45d6-ab43-ec5d85ce7458">
-<img width="1440" alt="curation2" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/66ef31eb-edc6-4d09-b069-1a199798e40d">
-<img width="1440" alt="curation3" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/2cd4d34e-f2a5-4605-8f5e-ad4d5abb4646">
-<img width="1440" alt="curation4" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/8a2bf289-bcce-46fa-a145-dd707c028a3e">
+<img width="1440" alt="스크린샷 2023-10-27 오전 8 35 35" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/af224e6c-5015-4bd2-bc38-c8fe4e963284">
+<img width="1440" alt="스크린샷 2023-10-27 오전 9 05 31" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/65c47067-c7a3-4efe-a3d0-1c83f653405c">
+<img width="1440" alt="스크린샷 2023-10-27 오전 8 55 53" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/c358bf7e-100b-4658-abcb-6ff8eab0af57">
+<img width="1440" alt="스크린샷 2023-10-27 오전 9 00 31" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/0277bd6a-4b1f-4dff-b5c8-6144c265eb6f">
 
 <br />
 
 ### 2. 최고, 최저 온도에 맞는 옷이 추천되고 클릭 시 네이버 쇼핑 페이지로 이동합니다
 
-<img width="1313" alt="curation5" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/9e61e583-f293-4fb6-a676-0c37b155d3b8">
+
+<img width="1313" alt="스크린샷 2023-10-27 오전 8 58 36" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/1c0cd211-c2cb-447a-a5ee-1894f58e229b">
 
 <br />
 
 ### 3. 버튼을 클릭하여 키워드에 맞는 상품을 볼 수 있습니다.
-
-<img width="1440" alt="curation6" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/9d515b81-00ea-43cc-b9f5-eaf470ba9d68">
+<img width="1440" alt="스크린샷 2023-10-27 오전 8 54 49" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/b95bc38a-c1bc-49f1-ac54-65ed9cce9022">
 
 <br />
 
 ### 4. 앞으로의 날씨 특성에 맞는 상품을 추천하여 날씨에 대비할 수 있게 합니다. (큰 일교차, 소나기, 환절기 진입 등)
 
-<img width="1440" alt="curation7" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/daed8330-4937-4229-8bfb-3f6e4fd8ac43">
+<img width="1440" alt="스크린샷 2023-10-27 오전 8 36 01" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/51eb44f1-cbd4-4836-a9c9-f374c2d36c0a">
