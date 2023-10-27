@@ -24,9 +24,6 @@ export const getCurrentSkyColor = (
   const now = koreaDate.getTime();
   const isDayTime = getCurrentCondition.IsDayTime;
 
-  console.log('isDayTime', isDayTime);
-  console.log(koreaDateString, now, date);
-
   const sunriseTime = new Date(
     getFiveDaysForecast?.DailyForecasts[0].Sun.Rise || 0,
   ).getTime();
@@ -64,12 +61,9 @@ export const getDefaultSkyColor = () => {
   const now = new Date();
   const hour = now.getHours();
 
-  console.log('default', hour);
-
   if (hour >= 6 && hour < 18) {
     return daytimeColor['day'];
   } else {
-    console.log('night', hour);
     return daytimeColor['night'];
   }
 };
