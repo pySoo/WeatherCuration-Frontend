@@ -19,6 +19,7 @@ export const getCurrentSkyColor = (
   const utc = date.getTime() + date.getTimezoneOffset() * 60 * 1000;
   const koreaTimeDiff = 9 * 60 * 60 * 1000;
   const now = new Date(utc + koreaTimeDiff).getTime();
+  console.log(date.getTime(), date.getHours(), date.getMinutes());
 
   const isDayTime = getCurrentCondition.IsDayTime;
 

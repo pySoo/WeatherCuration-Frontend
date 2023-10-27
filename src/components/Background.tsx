@@ -19,6 +19,7 @@ export default function Background({
   fivedaysForecastData,
   children,
 }: BackgroundProps) {
+  console.log(currentConditionData, fivedaysForecastData);
   const skyColor =
     currentConditionData && fivedaysForecastData
       ? getCurrentSkyColor(
