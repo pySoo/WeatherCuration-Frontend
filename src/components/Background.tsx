@@ -36,8 +36,11 @@ export default function Background({
     currentConditionData?.getCurrentCondition.PrecipitationType;
 
   useEffect(() => {
+    console.log('mounted sky ', skyColor);
     document.body.style.background = `linear-gradient(${skyColor})`;
   }, []);
+
+  console.log('rendered sky', skyColor);
 
   return (
     <div

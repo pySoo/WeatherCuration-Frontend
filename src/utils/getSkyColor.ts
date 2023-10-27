@@ -69,6 +69,7 @@ export const getDefaultSkyColor = () => {
   if (hour >= 6 && hour < 18) {
     return daytimeColor['day'];
   } else {
+    console.log('night', hour);
     return daytimeColor['night'];
   }
 };
