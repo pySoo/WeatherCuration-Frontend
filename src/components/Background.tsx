@@ -1,4 +1,4 @@
-import React, { type ReactNode, useEffect } from 'react';
+import React, { type ReactNode } from 'react';
 
 import {
   CurrentConditionData,
@@ -33,10 +33,6 @@ export default function Background({
   const cloudCover = currentConditionData?.getCurrentCondition.CloudCover;
   const precipitationType =
     currentConditionData?.getCurrentCondition.PrecipitationType;
-
-  useEffect(() => {
-    document.body.style.background = `linear-gradient(${skyColor})`;
-  }, []);
 
   return (
     <div
