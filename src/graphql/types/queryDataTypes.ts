@@ -86,7 +86,7 @@ export type CurrentConditionData = {
   getCurrentCondition: GetCurrentCondition;
 };
 
-type DailyForecasts = {
+export type DailyForecasts = {
   Date: string;
   Temperature: Temperature;
   Day: DayNight;
