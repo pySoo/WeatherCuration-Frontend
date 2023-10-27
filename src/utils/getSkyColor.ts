@@ -16,12 +16,16 @@ export const getCurrentSkyColor = (
   getFiveDaysForecast: GetFiveDaysForecast,
 ) => {
   const date = new Date();
-  const utc = date.getTime() + date.getTimezoneOffset() * 60 * 1000;
-  const koreaTimeDiff = 9 * 60 * 60 * 1000;
-  const now = new Date(utc + koreaTimeDiff).getTime();
-  console.log(date.getTime(), date.getHours(), date.getMinutes());
+  const koreaDateString = date.toLocaleString('ko-KR', {
+    timeZone: 'Asia/Seoul',
+  });
+  const koreaDate = new Date(koreaDateString);
 
+  const now = koreaDate.getTime();
   const isDayTime = getCurrentCondition.IsDayTime;
+
+  console.log('isDayTime', isDayTime);
+  console.log(koreaDateString, now, date);
 
   const sunriseTime = new Date(
     getFiveDaysForecast?.DailyForecasts[0].Sun.Rise || 0,
@@ -59,6 +63,8 @@ export const getCurrentSkyColor = (
 export const getDefaultSkyColor = () => {
   const now = new Date();
   const hour = now.getHours();
+
+  console.log('default', hour);
 
   if (hour >= 6 && hour < 18) {
     return daytimeColor['day'];
