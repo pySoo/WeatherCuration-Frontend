@@ -35,10 +35,12 @@ export const getCurrentSkyColor = (
     getCurrentCondition &&
     getCurrentCondition.PrecipitationSummary.PastHour.Metric.Value >= 2
   ) {
+    console.log('rain');
     return daytimeColor['rain'];
   }
 
   if (isDayTime && sunsetTime - now <= 1000 * 60 * 30) {
+    console.log('sunset');
     return daytimeColor['sunset'];
   }
 
@@ -47,12 +49,16 @@ export const getCurrentSkyColor = (
     sunsetTime - now > 0 &&
     sunriseTime - now <= 1000 * 60 * 30
   ) {
+    console.log('sunrise');
     return daytimeColor['sunrise'];
   }
 
+  console.log(isDayTime);
   if (isDayTime) {
+    console.log('day');
     return daytimeColor['day'];
   } else {
+    console.log('night');
     return daytimeColor['night'];
   }
 };
@@ -62,8 +68,10 @@ export const getDefaultSkyColor = () => {
   const hour = now.getHours();
 
   if (hour >= 6 && hour < 18) {
+    console.log('day');
     return daytimeColor['day'];
   } else {
+    console.log('night');
     return daytimeColor['night'];
   }
 };
