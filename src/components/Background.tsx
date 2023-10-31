@@ -29,8 +29,8 @@ export default function Background({
 
   const isDayTime = currentConditionData?.getCurrentCondition.IsDayTime;
 
-  const UVindex = currentConditionData?.getCurrentCondition.UVIndex;
-  const cloudCover = currentConditionData?.getCurrentCondition.CloudCover;
+  const UVindex = currentConditionData?.getCurrentCondition.UVIndex || 0;
+  const cloudCover = currentConditionData?.getCurrentCondition.CloudCover || 0;
   const precipitationType =
     currentConditionData?.getCurrentCondition.PrecipitationType;
 
@@ -42,9 +42,9 @@ export default function Background({
         background: `linear-gradient(${skyColor})`,
       }}
     >
-      {isDayTime && <Sun UVindex={UVindex ?? 0} />}
+      {isDayTime && <Sun UVindex={UVindex} />}
       {!isDayTime && <Stars />}
-      {cloudCover && cloudCover > 30 && <Cloud cloudCover={cloudCover} />}
+      {cloudCover > 30 && <Cloud cloudCover={cloudCover} />}
       {precipitationType === 'Rain' && <Rain />}
       {precipitationType === 'Snow' && <Snow />}
       {children}
