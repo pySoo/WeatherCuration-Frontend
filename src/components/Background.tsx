@@ -39,7 +39,6 @@ export default function Background({
     if (backgroundRef.current !== null) {
       backgroundRef.current.style.background = `linear-gradient(${skyColor})`;
     }
-    console.log('sky color: ', skyColor);
   }, [currentConditionData, fivedaysForecastData]);
 
   return (
