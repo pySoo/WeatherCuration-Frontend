@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import React, { type ReactNode, useEffect, useRef } from 'react';
 
 import {
   CurrentConditionData,
@@ -19,6 +19,8 @@ export default function Background({
   fivedaysForecastData,
   children,
 }: BackgroundProps) {
+  const backgroundRef = useRef<HTMLDivElement>(null);
+
   const skyColor =
     currentConditionData && fivedaysForecastData
       ? getCurrentSkyColor(
@@ -26,7 +28,6 @@ export default function Background({
           fivedaysForecastData.getFiveDaysForecast,
         )
       : getDefaultSkyColor();
-
   const isDayTime = currentConditionData?.getCurrentCondition.IsDayTime;
 
   const UVindex = currentConditionData?.getCurrentCondition.UVIndex || 0;
@@ -34,12 +35,19 @@ export default function Background({
   const precipitationType =
     currentConditionData?.getCurrentCondition.PrecipitationType;
 
+  useEffect(() => {
+    if (backgroundRef.current !== null) {
+      backgroundRef.current.style.background = `linear-gradient(${skyColor})`;
+    }
+    console.log('sky color: ', skyColor);
+  }, [currentConditionData, fivedaysForecastData]);
+
   return (
     <div
       className="w-full text-lg overflow-scroll sm:overflow-y-hidden relative"
+      ref={backgroundRef}
       style={{
         height: currentConditionData && fivedaysForecastData ? 'auto' : '100%',
-        background: `linear-gradient(${skyColor})`,
       }}
     >
       {isDayTime && <Sun UVindex={UVindex} />}
