@@ -26,7 +26,7 @@ export default function ShoppingList({
             <div className="px-3.5 flex items-center h-full w-fit gap-3">
               {shoppingItem.map((item) => (
                 <ShoppingItem
-                  key={item.title}
+                  key={`${item.title}-${item.lprice}`}
                   shoppingItem={item}
                   isPriority={isPriority}
                 />
