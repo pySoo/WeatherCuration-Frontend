@@ -32,8 +32,12 @@ export default function Background({
 
   const UVindex = currentConditionData?.getCurrentCondition.UVIndex || 0;
   const cloudCover = currentConditionData?.getCurrentCondition.CloudCover || 0;
-  const precipitationType =
-    currentConditionData?.getCurrentCondition.PrecipitationType;
+
+  const currentForecast =
+    fivedaysForecastData?.getFiveDaysForecast.DailyForecasts?.[0];
+  const precipitationType = isDayTime
+    ? currentForecast?.Day.PrecipitationType
+    : currentForecast?.Night.PrecipitationType;
 
   useEffect(() => {
     if (backgroundRef.current !== null) {
