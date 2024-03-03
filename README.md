@@ -8,15 +8,18 @@
 
 [Weather Curation](https://weather-curation.vercel.app/)
 
-## Tech Stack
+<br />
 
-<div align=center>
+## 🛠️ Tech Stack
 
-|     Area     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Tech Stack                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| :----------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| **Frontend** | <img src="https://img.shields.io/badge/GraphQL-E10098.svg?style=for-the-badge&logo=GraphQL&logoColor=white"> <img src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=Next.js&logoColor=white"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=black"> <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?&style=for-the-badge&logo=TailwindCSS&logoColor=white"> <img src="https://img.shields.io/badge/ESLINT-4B32C3?&style=for-the-badge&logo=ESLint&logoColor=white"> <img src="https://img.shields.io/badge/PRETTIER-F7B93E?&style=for-the-badge&logo=Prettier&logoColor=white"> <img src="https://img.shields.io/badge/HUSKY-000000?&style=for-the-badge&logo=Husky&logoColor=white"> <img src="https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&logoColor=white"> |
-
-</div>
+|        Category        |                                                                                                                                                       Technologies                                                                                                                                                        |
+| :--------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| **프레임워크 및 언어** |                                                  <img src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=Next.js&logoColor=white"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=black">                                                  |
+|     **서버 통신 및 상태 관리**      |                                                 <img src="https://img.shields.io/badge/Apollo_GraphQL-E10098.svg?style=for-the-badge&logo=GraphQL&logoColor=white">                                                  |
+|      **스타일링**      |                                                                                                         <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?&style=for-the-badge&logo=TailwindCSS&logoColor=white">                                                                                                         |
+|     **빌드 도구**      |                                                                                                          <img src="https://img.shields.io/badge/Vite-646CFF.svg?style=for-the-badge&logo=vite&logoColor=white">                                                                                                           |
+|     **코드 관리**      | <img src="https://img.shields.io/badge/ESLINT-4B32C3?&style=for-the-badge&logo=ESLint&logoColor=white"> <img src="https://img.shields.io/badge/PRETTIER-F7B93E?&style=for-the-badge&logo=Prettier&logoColor=white"> <img src="https://img.shields.io/badge/HUSKY-000000?&style=for-the-badge&logo=Husky&logoColor=white"> |
+|    **배포 플랫폼**     |                                                                                                        <img src="https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&logoColor=white">                                                                                                         |
 
 <br />
 
@@ -27,9 +30,7 @@
 
 <br />
 
-## ✅ 설계 방식 및 개선 사항
-
-### 성능 개선
+## ✅ 설계 방식 및 성능 개선 사항
 
 #### Overfetching 문제 해결을 통한 트래픽 개선
 
@@ -50,12 +51,9 @@
 - **`빌드 속도가 느린 CRA의 단점을 개선`** 하기 위해 번들링 도구로 Vite를 선택하였습니다.
 - Vite의 **esbuild와 브라우저의 ESM을 이용한 번들링**을 활용하여 개발 속도를 개선했습니다.
 
-
 <br />
 
-
-
-## 화면 구성
+## ✨ 화면 구성
 
 ### 1. 현재 시간, 자외선 지수, 구름량, 눈 또는 비의 여부에 따라서 배경이 변화합니다.
 <img width="1440" alt="스크린샷 2023-10-27 오전 8 35 35" src="https://github.com/pySoo/WeatherCuration-Frontend/assets/55135881/af224e6c-5015-4bd2-bc38-c8fe4e963284">
