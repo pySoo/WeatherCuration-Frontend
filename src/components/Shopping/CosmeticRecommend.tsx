@@ -14,8 +14,8 @@ import Pill from '../Common/Pill';
 import SubTitle from '../Common/SubTitle';
 import ShoppingList from './ShoppingList';
 
-export default function CosmeRecommend() {
-  const [cosmeList, setCosmeList] = useState<ShoppingListType[]>([]);
+export default function CosmeticRecommend() {
+  const [cosmeticList, setCosmeticList] = useState<ShoppingListType[]>([]);
 
   const weatherState = useRecoilValue(weatherAtom);
   const { weatherKeywords } = weatherState;
@@ -33,7 +33,7 @@ export default function CosmeRecommend() {
         }),
       ),
     ).then((results) => {
-      setCosmeList(
+      setCosmeticList(
         results.map((result) => {
           const { keyword, shoppingData } = result.data.getShoppingList;
           return { keyword, shoppingData };
@@ -62,7 +62,7 @@ export default function CosmeRecommend() {
             <Description className="my-3 text-white text-[21px]">
               {description}
             </Description>
-            <ShoppingList selectedKeyword={query} shoppingList={cosmeList} />
+            <ShoppingList selectedKeyword={query} shoppingList={cosmeticList} />
           </div>
         ))}
       </div>
