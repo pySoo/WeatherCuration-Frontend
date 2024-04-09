@@ -6,7 +6,7 @@ import {
 } from '@/graphql/types/queryDataTypes';
 import { getCurrentSkyColor, getDefaultSkyColor } from '@/utils/getSkyColor';
 
-import { Cloud, Rain, Snow, Stars, Sun } from './Weather/index';
+import { Cloud, Rain, Snow, Stars, Sun } from './Weather/Animation/index';
 
 type BackgroundProps = {
   currentConditionData?: CurrentConditionData;
