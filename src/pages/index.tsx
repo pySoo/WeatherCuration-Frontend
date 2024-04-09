@@ -48,7 +48,7 @@ export default function Main() {
     },
   });
 
-  const allQuriesCompleted = currentConditionData && fivedaysForecastData;
+  const allQueriesCompleted = currentConditionData && fivedaysForecastData;
 
   const queryErrors = [currentConditionError, fivedaysForecastError].filter(
     Boolean,
@@ -65,7 +65,7 @@ export default function Main() {
         currentConditionData={currentConditionData}
         fivedaysForecastData={fivedaysForecastData}
       >
-        {allQuriesCompleted ? (
+        {allQueriesCompleted ? (
           <WeatherCuration currentConditionData={currentConditionData} />
         ) : (
           <Loader />
