@@ -1,7 +1,7 @@
 import { CurrentConditionData } from '@/graphql/types/queryDataTypes';
 
 import CurrentWeather from './CurrentWeather';
-import RecommendSection from './RecommendSection';
+import RecommendSection from '../RecommendSection';
 
 type WeatherCurationProps = {
   currentConditionData: CurrentConditionData;

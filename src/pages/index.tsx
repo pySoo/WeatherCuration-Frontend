@@ -4,7 +4,7 @@ import { useSetRecoilState } from 'recoil';
 import { weatherAtom } from '@/atom/weatherAtom';
 import Background from '@/components/Background';
 import Loader from '@/components/Common/Loader';
-import WeatherCuration from '@/components/WeatherCuration';
+import WeatherCuration from '@/components/Weather/WeatherCuration';
 import { POLL_INTERVAL_TIME } from '@/constants/graphql';
 import { DEFAULT_LOCATION } from '@/constants/location';
 import {

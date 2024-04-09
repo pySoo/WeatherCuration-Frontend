@@ -19,6 +19,7 @@ export default function CurrentWeather({
   const currentTemperature =
     currentConditionData.getCurrentCondition.Temperature.Metric.Value;
   const weatherText = currentConditionData.getCurrentCondition.WeatherText;
+
   return (
     <div className="flex flex-col items-center space-y-1 mb-14">
       <h1 className="text-4xl shadowed-text">{cityName}</h1>
